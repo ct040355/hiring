@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_account"
+    app:startDestination="@id/nav_account"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.kma.movies.ui.home.AccountFragment"
+        android:label="@string/account_movies"
+        tools:layout="@layout/fragment_account">
+
+        <action
+            android:id="@+id/navigateToSignIn"
+            app:destination="@id/nav_sign_in"/>
+        <action
+            android:id="@+id/navigateToDialogLogout"
+            app:destination="@id/nav_logout"/>
+        <action
+            android:id="@+id/navigateToProfile"
+            app:destination="@id/nav_profile"/>
+
+        <action
+            android:id="@+id/navigateToJobApplied"
+            app:destination="@id/nav_job_applied"/>
+        <action
+            android:id="@+id/navigateToJobUser"
+            app:destination="@id/nav_job_user"/>
+        <action
+            android:id="@+id/navigateToPostJob"
+            app:destination="@id/nav_post_job"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sign_in"
+        android:name="com.kma.movies.ui.sign_in.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/navigateToSignUp"
+            app:destination="@id/nav_sign_up"/>
+
+        <action
+            android:id="@+id/successToSignUp"
+            app:destination="@id/nav_account"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.kma.movies.ui.sign_in.LogoutDialog"
+        tools:layout="@layout/dialog_logout">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_post_job"
+        android:name="com.kma.movies.ui.home.PostJobFragment"
+        android:label="Đăng bài"
+        tools:layout="@layout/fragment_post_job">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sign_up"
+        android:name="com.kma.movies.ui.sign_in.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action
+            android:id="@+id/successToSignIn"
+            app:destination="@id/nav_sign_in"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.kma.movies.ui.home.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/navigateToPostCV"
+            app:destination="@id/nav_post_cv"/>
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_post_cv"
+        android:name="com.kma.movies.ui.home.PostCVFragment"
+        android:label="Đăng bài"
+        tools:layout="@layout/fragment_post_cv">
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_job_applied"
+        android:name="com.kma.movies.ui.home.ListJobAppliedFragment"
+        android:label="Công việc đã ứng tuyển"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/navigateToMovieDetails"
+            app:destination="@id/nav_movie_detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_job_user"
+        android:name="com.kma.movies.ui.home.ListJobByUserFragment"
+        android:label="Bài đăng"
+        tools:layout="@layout/fragment_job_user">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/navigateToMovieDetails"
+            app:destination="@id/nav_movie_detail"/>
+    </fragment>
+
+
+    <activity
+        android:id="@+id/nav_movie_detail"
+        android:name="com.kma.movies.ui.details.JobDetailsActivity">
+
+        <argument
+            android:name="isApply"
+            app:argType="boolean" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+
+        <argument
+            android:name="poster_path"
+            app:argType="string"/>
+
+
+    </activity>
+
+
+
+</navigation>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_movie_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/brand_color_2">
+
+        <ImageView
+            android:id="@+id/imvBack"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="16dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="@color/white_primary" />
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Tìm kiếm công việc"
+            android:textColor="@color/white_primary"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_border_12_15white"
+            android:gravity="center"
+            android:minWidth="60dp"
+            android:paddingHorizontal="12dp"
+            android:textColor="@color/white_primary"
+            android:textSize="18dp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <com.kma.movies.common.widget.CustomSwipeRefreshLayout
+        android:id="@+id/srl_fragment_movie_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llContainerSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/idSV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapebgsearch"
+                    android:iconifiedByDefault="false"
+                    android:padding="4dp"
+                    android:queryHint="Search Programming language"
+                    app:iconifiedByDefault="false" />
+
+                <ImageView
+                    android:id="@+id/imvFilter"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_filter" />
+            </LinearLayout>
+
+            <com.kma.movies.common.widget.AutofitRecyclerView
+                android:id="@+id/rv_fragment_movie_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/llContainerSearch"
+                android:clipToPadding="false"
+                android:columnWidth="@dimen/grid_column_width"
+                android:paddingLeft="@dimen/margin_minimum"
+                android:paddingTop="@dimen/margin_minimum"
+                android:paddingRight="@dimen/margin_minimum"
+                android:paddingBottom="@dimen/margin_huge"
+                tools:listitem="@layout/row_movie_list" />
+
+            <ProgressBar
+                android:id="@+id/pb_fragment_movie_list"
+                android:layout_width="@dimen/small_progress_bar_size"
+                android:layout_height="@dimen/small_progress_bar_size"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_semi_medium"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </com.kma.movies.common.widget.CustomSwipeRefreshLayout>
+
+</LinearLayout>

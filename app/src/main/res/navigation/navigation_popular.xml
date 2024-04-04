@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_popular"
+    app:startDestination="@id/nav_popular"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/nav_popular"
+        android:name="com.kma.movies.ui.home.HomeFragment"
+        android:label="Tag"
+        tools:layout="@layout/fragment_home_new">
+
+        <action
+            android:id="@+id/navigateToJobByTag"
+            app:destination="@id/nav_job_by_tag"/>
+        <action
+            android:id="@+id/navigateToSearch"
+            app:destination="@id/nav_search"/>
+        <action
+            android:id="@+id/navigateToMovieDetails"
+            app:destination="@id/nav_movie_detail"/>
+    </fragment>
+
+    <activity
+        android:id="@+id/nav_movie_detail"
+        android:name="com.kma.movies.ui.details.JobDetailsActivity">
+
+        <argument
+            android:name="id"
+            app:argType="string" />
+
+        <argument
+            android:name="isApply"
+            app:argType="boolean" />
+        <argument
+            android:name="poster_path"
+            app:argType="string"/>
+
+
+    </activity>
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.kma.movies.ui.search.SearchMovieFragment"
+        android:label="@string/movie_search"
+        tools:layout="@layout/fragment_search_view">
+
+        <action
+            android:id="@+id/navigateToMovieDetails"
+            app:destination="@id/nav_movie_detail"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_job_by_tag"
+        android:name="com.kma.movies.ui.home.ListJobByTagFragment"
+        tools:layout="@layout/fragment_list_job"
+        android:label="@string/list"
+        >
+        <argument
+            android:name="tag"
+            app:argType="string" />
+        <action
+            android:id="@+id/navigateToMovieDetails"
+            app:destination="@id/nav_movie_detail"/>
+
+    </fragment>
+
+
+</navigation>

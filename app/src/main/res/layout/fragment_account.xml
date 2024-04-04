@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containedProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_actor"
+            android:layout_width="0dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/poster_placeholder"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/image_actor"
+            tools:text="Captain America" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_name_actor"
+            style="@style/Regular.Medium.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_username"
+            tools:text="\@captn.ameri" />
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvProfile"
+            style="@style/SemiBold.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:visibility="visible"
+            android:paddingVertical="@dimen/spacing_medium"
+            android:layout_marginTop="12dp"
+            android:text="Hồ sơ"
+            android:background="@drawable/bg_round4_stroke"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name_actor" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvListJobApply"
+            style="@style/SemiBold.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:layout_marginTop="12dp"
+            android:visibility="visible"
+            android:paddingVertical="@dimen/spacing_medium"
+            android:text="Danh sách đã nộp CV"
+            android:background="@drawable/bg_round4_stroke"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPostJob"
+            style="@style/SemiBold.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:visibility="visible"
+            android:paddingVertical="@dimen/spacing_medium"
+            android:layout_marginTop="12dp"
+            android:text="Đăng bài"
+            android:background="@drawable/bg_round4_stroke"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvListJobApply" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvJobPosted"
+            style="@style/SemiBold.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:visibility="visible"
+            android:paddingVertical="@dimen/spacing_medium"
+            android:text="Danh sách bài đã đăng"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_round4_stroke"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPostJob" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChangePassword"
+            style="@style/SemiBold.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:layout_marginTop="12dp"
+            android:visibility="visible"
+            android:paddingVertical="@dimen/spacing_medium"
+            android:text="Đổi mật khẩu"
+            android:background="@drawable/bg_round4_stroke"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvJobPosted" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_sign_out"
+            style="@style/SemiBold.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:drawableStart="@drawable/ic_logout"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:paddingVertical="@dimen/spacing_medium"
+            android:text="@string/sign_out"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_round4_stroke"
+            android:textColor="@color/shade_ternary_color"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChangePassword"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/vector_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/log_in"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_message_wrong_title"
+            style="@style/SemiBold.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:text="@string/log_in"
+            android:textColor="@color/brand_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vector_image" />
+
+        <TextView
+            android:id="@+id/text_message_wrong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_extra_large"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="@string/you_must_be_logged_in_to_see_the_profile"
+            android:textAlignment="center"
+            android:textAppearance="@style/Regular.Medium.Secondary"
+            android:textColor="@color/shade_secondary_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_message_wrong_title" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_nav_login"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="@dimen/spacing_large"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textAppearance="@style/SemiBold.Medium"
+            android:textColor="@color/white_primary"
+            app:backgroundTint="@color/color_states_material_button"
+            app:cornerRadius="@dimen/radius_small"
+            app:layout_constraintTop_toBottomOf="@+id/text_message_wrong"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

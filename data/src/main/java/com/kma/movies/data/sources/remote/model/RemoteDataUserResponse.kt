@@ -1,0 +1,13 @@
+package com.kma.movies.data.sources.remote.model
+
+import com.google.gson.annotations.SerializedName
+
+
+data class RemoteDataUserResponse(
+    @SerializedName("_id") var id: String? = null,
+    @SerializedName("name") var name: String? = null,
+    @SerializedName("username") var username: String? = null,
+    @SerializedName("password") var password: String? = null,
+    @SerializedName("role") var role: String? = null,
+
+    )

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kma.movies.common.widget.CustomSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl_fragment_movie_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/llData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="Bài đăng đã được duyệt"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <com.kma.movies.common.widget.AutofitRecyclerView
+                    android:id="@+id/rv_fragment_movie_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:columnWidth="@dimen/grid_column_width"
+                    android:paddingLeft="@dimen/margin_minimum"
+                    android:paddingTop="@dimen/margin_minimum"
+                    android:paddingRight="@dimen/margin_minimum"
+                    android:layout_marginTop="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="Tất cả bài đăng"
+                    android:textSize="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textStyle="bold" />
+
+                <com.kma.movies.common.widget.AutofitRecyclerView
+                    android:id="@+id/rv_fragment_movie_list_not"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:columnWidth="@dimen/grid_column_width"
+                    android:paddingLeft="@dimen/margin_minimum"
+                    android:paddingTop="@dimen/margin_minimum"
+                    android:paddingRight="@dimen/margin_minimum"
+                    android:layout_marginTop="12dp"
+                    android:paddingBottom="@dimen/margin_huge" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_primary"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/vector_image_empty"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/img_empy_movie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/brand_color" />
+
+            <TextView
+                style="@style/SemiBold.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="Empty"
+                android:textColor="@color/brand_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vector_image_empty" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_fragment_movie_list"
+            android:layout_width="@dimen/small_progress_bar_size"
+            android:layout_height="@dimen/small_progress_bar_size"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_semi_medium"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</com.kma.movies.common.widget.CustomSwipeRefreshLayout>
